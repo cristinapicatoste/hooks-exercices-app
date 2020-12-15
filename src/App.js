@@ -13,6 +13,7 @@ import { ExampleUseRef } from './components/04-useRef/ExampleUseRef';
 import { useLayout } from './components/05-useLayoutEffect/useLayout';
 import { Memorize } from './components/06-memos/Memorize';
 import { MemoHook } from './components/06-memos/MemoHook';
+import { CallbackHook } from './components/06-memos/CallbackHook';
 
 
 export const App = () => {
@@ -31,6 +32,7 @@ export const App = () => {
                     <Route exact path={route.USELAYOUT} component={useLayout} />
                     <Route exact path={route.MEMOS} component={Memorize} />
                     <Route exact path={route.MEMOHOOK} component={MemoHook} />
+                    <Route exact path={route.CALLBACKHOOK} component={CallbackHook} />
                 </Switch>
             </Router>
         </div>

@@ -9,3 +9,4 @@ export const USEREFREAL = "/userefreal";
 export const USELAYOUT = "/uselayout";
 export const MEMOS = "/memos";
 export const MEMOHOOK = "/memohook";
+export const CALLBACKHOOK = "/callbackhook";
