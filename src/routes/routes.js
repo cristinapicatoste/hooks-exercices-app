@@ -10,3 +10,4 @@ export const USELAYOUT = "/uselayout";
 export const MEMOS = "/memos";
 export const MEMOHOOK = "/memohook";
 export const CALLBACKHOOK = "/callbackhook";
+export const PADRE = '/memochallenge'

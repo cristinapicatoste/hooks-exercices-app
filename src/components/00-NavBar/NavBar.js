@@ -17,6 +17,7 @@ export const NavBar = () => {
             <Link to={route.MEMOS}>Memos</Link>
             <Link to={route.MEMOHOOK}>Memo Hook</Link>
             <Link to={route.CALLBACKHOOK}>Callback</Link>
+            <Link to={route.PADRE}>Challenge</Link>
         </nav>
     )
 }

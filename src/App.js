@@ -14,6 +14,7 @@ import { useLayout } from './components/05-useLayoutEffect/useLayout';
 import { Memorize } from './components/06-memos/Memorize';
 import { MemoHook } from './components/06-memos/MemoHook';
 import { CallbackHook } from './components/06-memos/CallbackHook';
+import { Padre } from './components/07-tarea-memo/Padre';
 
 
 export const App = () => {
@@ -33,6 +34,7 @@ export const App = () => {
                     <Route exact path={route.MEMOS} component={Memorize} />
                     <Route exact path={route.MEMOHOOK} component={MemoHook} />
                     <Route exact path={route.CALLBACKHOOK} component={CallbackHook} />
+                    <Route exact path={route.PADRE} component={Padre} />
                 </Switch>
             </Router>
         </div>
