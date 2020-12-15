@@ -1,0 +1,9 @@
+export const HOME = "/";
+export const COUNTER = "/counterapp";
+export const COUNTERHOOK = "/countercustomhook";
+export const FORM = "/simpleform";
+export const FORMHOOK = "/formcustomhook";
+export const BREAKING = "/multiplecustomhooks";
+export const USEREF = "/useref";
+export const USEREFREAL = "/userefreal";
+export const USELAYOUT = "/uselayout";

@@ -1,13 +1,145 @@
+/* font-family: 'Abril Fatface', cursive;
+font-family: 'Questrial', sans-serif; */
+
+:root {
+    --gradientPinkOr: linear-gradient(
+      44deg,
+      rgba(233, 70, 138, 1) 0%,
+      rgba(249, 184, 76, 1) 100%
+    );
+    --gradientPinkSky: linear-gradient(
+      44deg,
+      rgba(233, 70, 138, 1) 0%,
+      rgba(76, 226, 249, 1) 100%
+    );
+    --gradientBlue: linear-gradient(
+      44deg,
+      rgba(11, 30, 69, 1) 36%,
+      rgba(76, 226, 249, 1) 100%
+    );
+    --gradientBluePink: linear-gradient(
+      44deg,
+      rgba(11, 30, 69, 1) 11%,
+      rgba(233, 70, 138, 1) 100%
+    );
+    --or: #f9b807;
+    --pink: #e9468a;
+    --sky: #4ce2f9;
+    --darkBlue: #0b1e45;
+    --lightGrey: rgb(175, 175, 175);
+  }
+  
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Questrial', sans-serif;
+    margin: 0;
+    padding: 30px 80px;
+    background-image: url(https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80);
+    backdrop-filter: brightness(80%) contrast(120%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    overflow: hidden;
+    height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+nav a:hover {
+  color: var(--or);
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    font-family: "Raleway", sans-serif;
+    border: none;
+    background: var(--gradientPinkOr);
+    border-radius: 40px;
+    color: white;
+    margin: 5px;
+  }
+  
+  button:hover {
+    font-family: "Raleway", sans-serif;
+    border: 2px solid var(--or);
+    border-radius: 40px;
+    color: var(--or);
+    background: transparent;
+  }
+  
+  button:active, button:focus{
+    outline: none;
+  }
+
+  button.blue {
+    background: var(--gradientBlue);
+  }
+  button.blue:hover {
+    border: 2px solid var(--darkBlue);
+    border-radius: 40px;
+    color: var(--darkBlue);
+    background: transparent;
+  }
+
+  button.add {
+    width: 40px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 0;
+  }
+  button.add:hover {
+    /* border: 2px solid var(--darkBlue);
+    border-radius: 40px; */
+    color: var(--darkBlue);
+    background: white;
+  }
+
+input {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 40px;
+    border-radius: 30px;
+    padding: 0 10px;
+    margin: 10px 0 30px;
+    border: none;
+    /* border-bottom: 1px solid lightgrey; */
+    outline: none;
+    outline-width: 0;
+    background-color: rgba(255, 255, 255, 0.335);
+    /* opacity: 50%; */
+}
+
+input::placeholder {
+    color: var(--or);
+    width: 100%;
+  }
+
+div.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: calc(80vh - 80px);
+}
+
+div.home h1 {
+  font-size: 8rem;
+  margin: 40px;
+}
+
+hr {
+  margin: 30px 0;
 }
