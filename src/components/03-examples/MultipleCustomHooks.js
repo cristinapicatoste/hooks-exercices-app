@@ -15,7 +15,6 @@ export const MultipleCustomHooks = () => {
     //!true = false
     //!!null = false
 
-
     // const { author, quote, quote_id } = !!data && data[0];
 
     return (
@@ -26,7 +25,7 @@ export const MultipleCustomHooks = () => {
                 loading
                     ? <div>Loading...</div>
                     : <blockquote>{data && data.length && <>
-                        <p>{data[0].quote}</p>
+                        <p><em>{data[0].quote}</em></p>
                         <h5>{data[0].author}</h5>
                         <h6>{data[0].quote_id}</h6>
                         <hr /> </>}
