@@ -11,6 +11,7 @@ import { CounterCustomHook } from './components/01-useState/CounterCustomHook';
 import { NavBar } from './components/00-NavBar/NavBar';
 import { ExampleUseRef } from './components/04-useRef/ExampleUseRef';
 import { useLayout } from './components/05-useLayoutEffect/useLayout';
+import { Memorize } from './components/06-memos/Memorize';
 
 
 export const App = () => {
@@ -27,6 +28,7 @@ export const App = () => {
                     <Route exact path={route.COUNTER} component={CounterApp} />
                     <Route exact path={route.USEREFREAL} component={ExampleUseRef} />
                     <Route exact path={route.USELAYOUT} component={useLayout} />
+                    <Route exact path={route.MEMOS} component={Memorize} />
                 </Switch>
             </Router>
         </div>
