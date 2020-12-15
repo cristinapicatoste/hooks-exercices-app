@@ -12,6 +12,7 @@ import { NavBar } from './components/00-NavBar/NavBar';
 import { ExampleUseRef } from './components/04-useRef/ExampleUseRef';
 import { useLayout } from './components/05-useLayoutEffect/useLayout';
 import { Memorize } from './components/06-memos/Memorize';
+import { MemoHook } from './components/06-memos/MemoHook';
 
 
 export const App = () => {
@@ -29,6 +30,7 @@ export const App = () => {
                     <Route exact path={route.USEREFREAL} component={ExampleUseRef} />
                     <Route exact path={route.USELAYOUT} component={useLayout} />
                     <Route exact path={route.MEMOS} component={Memorize} />
+                    <Route exact path={route.MEMOHOOK} component={MemoHook} />
                 </Switch>
             </Router>
         </div>
