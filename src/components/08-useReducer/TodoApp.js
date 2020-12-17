@@ -2,9 +2,10 @@ import React, { useReducer, useEffect, useRef } from 'react'
 import { todoReducer } from './todoReducer';
 import { useForm } from '../../hook/useForm';
 // import DeleteIcon from '@material-ui/icons/Delete';
-import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
-import EditIcon from '@material-ui/icons/Edit';
+// import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
+// import EditIcon from '@material-ui/icons/Edit';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import { TodoList } from './TodoList';
 
 const init = () => {
     return JSON.parse(localStorage.getItem('todos')) || [];
@@ -99,6 +100,10 @@ export const TodoApp = () => {
                     onClick={handleSubmit}
                 />
             </div>
+
+            <TodoList todos={todos} handleDelete={handleDelete} handleToggle={handleToggle} />
+
+            {/* 
             <ol>
                 {
                     todos.map(todo => (
@@ -123,6 +128,7 @@ export const TodoApp = () => {
                     ))
                 }
             </ol>
+*/}
         </div>
     )
 }
