@@ -15,6 +15,8 @@ import { Memorize } from './components/06-memos/Memorize';
 import { MemoHook } from './components/06-memos/MemoHook';
 import { CallbackHook } from './components/06-memos/CallbackHook';
 import { Padre } from './components/07-tarea-memo/Padre';
+// import { introReducer } from './components/08-useReducer/introReducer';
+import { TodoApp } from './components/08-useReducer/TodoApp';
 
 
 export const App = () => {
@@ -35,6 +37,7 @@ export const App = () => {
                     <Route exact path={route.MEMOHOOK} component={MemoHook} />
                     <Route exact path={route.CALLBACKHOOK} component={CallbackHook} />
                     <Route exact path={route.PADRE} component={Padre} />
+                    <Route exact path={route.USEREDUCE} component={TodoApp} />
                 </Switch>
             </Router>
         </div>
