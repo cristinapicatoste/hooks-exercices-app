@@ -1,109 +1,112 @@
-import React, { useReducer, useEffect, useRef } from 'react'
-import { todoReducer } from './todoReducer';
-import { useForm } from '../../hook/useForm';
+import React, { useReducer, useEffect, useRef } from "react";
+import { todoReducer } from "./todoReducer";
+import { useForm } from "../../hook/useForm";
 // import DeleteIcon from '@material-ui/icons/Delete';
 // import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 // import EditIcon from '@material-ui/icons/Edit';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
-import { TodoList } from './TodoList';
+import AddCircleIcon from "@material-ui/icons/AddCircle";
+import { TodoList } from "./TodoList";
 
 const init = () => {
-    return JSON.parse(localStorage.getItem('todos')) || [];
-}
+  return JSON.parse(localStorage.getItem("todos")) || [];
+};
 
 export const TodoApp = () => {
+  const [todos, dispatch] = useReducer(todoReducer, [], init);
 
-    const [todos, dispatch] = useReducer(todoReducer, [], init);
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
-    useEffect(() => {
-        localStorage.setItem('todos', JSON.stringify(todos))
-    }, [todos]);
+  const [{ description }, handleInputChange, reset] = useForm({
+    description: "",
+  });
 
-    const [{ description }, handleInputChange, reset] = useForm({
-        description: ''
-    });
+  //Usamos el useRef para seleccionar el input tras hacer submit y seguir escribiendo;
+  const ref = useRef(null);
 
-    //Usamos el useRef para seleccionar el input tras hacer submit y seguir escribiendo;
-    const ref = useRef(null);
-
-    const handleSubmit = (e) => {
-        if (description.trim().length <= 1) {
-            return;
-        }
-        const newTodo = {
-            id: new Date().getTime(),
-            desc: description,
-            done: false
-        };
-
-        // create action
-        const addTodoAction = {
-            type: 'add',
-            payload: newTodo
-        };
-
-        // dispatch to add 
-        dispatch(addTodoAction);
-
-        reset();
-
-        //Deja el input seleccionado tras enviar el contenido
-        //y asú seguir escribiendo
-        ref.current.focus();
+  const handleSubmit = (e) => {
+    if (description.trim().length <= 1) {
+      return;
+    }
+    const newTodo = {
+      id: new Date().getTime(),
+      desc: description,
+      done: false,
     };
 
-    const handleKeyUp = (e) => {
-        if (e.key === 'Enter') {
-            handleSubmit(e);
-        }
+    // create action
+    const addTodoAction = {
+      type: "add",
+      payload: newTodo,
+    };
+
+    // dispatch to add
+    dispatch(addTodoAction);
+
+    reset();
+
+    //Deja el input seleccionado tras enviar el contenido
+    //y asú seguir escribiendo
+    ref.current.focus();
+  };
+
+  const handleKeyUp = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit(e);
     }
+  };
 
-    const handleDelete = (todoId) => {
-        // create action
-        const deleteToDo = {
-            type: 'delete',
-            payload: todoId,
-        }
-        // dispatch to delete
-        dispatch(deleteToDo)
-    }
+  const handleDelete = (todoId) => {
+    // create action
+    const deleteToDo = {
+      type: "delete",
+      payload: todoId,
+    };
+    // dispatch to delete
+    dispatch(deleteToDo);
+  };
 
-    const handleToggle = (todoId) => {
-        const toggle = {
-            type: 'toggle',
-            payload: todoId
-        }
+  const handleToggle = (todoId) => {
+    const toggle = {
+      type: "toggle",
+      payload: todoId,
+    };
 
-        dispatch(toggle)
-    }
+    dispatch(toggle);
+  };
 
-    // console.log(todo.done);
+  // console.log(todo.done);
 
-    return (
-        <div>
-            <h1>Todo App</h1>
-            <h4>Total todos: {todos.length}</h4>
-            <div className="add-list-options">
-                <input
-                    type="text"
-                    name="description"
-                    value={description}
-                    onChange={handleInputChange}
-                    onKeyUp={handleKeyUp}
-                    ref={ref}
-                    placeholder="Add new to do"
-                    autoComplete="off"
-                />
-                <AddCircleIcon
-                    fontSize="large"
-                    style={{ color: "white" }}
-                    onClick={handleSubmit}
-                />
-            </div>
+  return (
+    <div>
+      <h1>Todo App</h1>
+      <h4>Total todos: {todos.length}</h4>
+      <div className="add-list-options">
+        <input
+          type="text"
+          name="description"
+          value={description}
+          onChange={handleInputChange}
+          onKeyUp={handleKeyUp}
+          ref={ref}
+          placeholder="Add new to do"
+          autoComplete="off"
+        />
+        <AddCircleIcon
+          fontSize="large"
+          style={{ color: "white" }}
+          onClick={handleSubmit}
+        />
+      </div>
 
-            <TodoList todos={todos} handleDelete={handleDelete} handleToggle={handleToggle} />
+      <TodoList
+        todos={todos}
+        handleDelete={handleDelete}
+        handleToggle={handleToggle}
+      />
 
-            {/* 
+      {/* 
             <ol>
                 {
                     todos.map(todo => (
@@ -129,6 +132,6 @@ export const TodoApp = () => {
                 }
             </ol>
 */}
-        </div>
-    )
-}
+    </div>
+  );
+};

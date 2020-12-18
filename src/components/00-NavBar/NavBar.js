@@ -1,25 +1,42 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 // import { HOME, COUNTER, COUNTERHOOK, FORM, FORMHOOK, BREAKING, USEREF } from '../../routes/routes';
-import * as route from '../../routes/routes';
+import * as route from "../../routes/routes";
 
 export const NavBar = () => {
-    return (
-        <nav>
-            <Link to={route.HOME}>Home</Link>
-            {/* <Link to={route.COUNTER}>Counter</Link> */}
-            <Link to={route.COUNTERHOOK}>Counter</Link>
-            {/* <Link to={route.FORM}>Form</Link> */}
-            <Link to={route.FORMHOOK}>Form</Link>
-            <Link to={route.BREAKING}>Fetch</Link>
-            <Link to={route.USEREFREAL}>UseRef</Link>
-            <Link to={route.USELAYOUT}>UseLayout</Link>
-            <Link to={route.MEMOS}>Memo</Link>
-            {/* <Link to={route.MEMOHOOK}>Memo Hook</Link> */}
-            {/* <Link to={route.CALLBACKHOOK}>Callback</Link> */}
-            <Link to={route.PADRE}>Challenge</Link>
-            <Link to={route.USEREDUCE}>UseReducer</Link>
-        </nav>
-    )
-}
-
+  return (
+    <nav>
+      <NavLink exact activeClassName="activeNav" to={route.HOME}>
+        Home
+      </NavLink>
+      {/* <NavLink exact activeClassName="activeNav" to={route.COUNTER}>Counter</NavLink> */}
+      <NavLink exact activeClassName="activeNav" to={route.COUNTERHOOK}>
+        Counter
+      </NavLink>
+      {/* <NavLink exact activeClassName="activeNav" to={route.FORM}>Form</NavLink> */}
+      <NavLink exact activeClassName="activeNav" to={route.FORMHOOK}>
+        Form
+      </NavLink>
+      <NavLink exact activeClassName="activeNav" to={route.BREAKING}>
+        Fetch
+      </NavLink>
+      <NavLink exact activeClassName="activeNav" to={route.USEREFREAL}>
+        UseRef
+      </NavLink>
+      <NavLink exact activeClassName="activeNav" to={route.USELAYOUT}>
+        UseLayout
+      </NavLink>
+      <NavLink exact activeClassName="activeNav" to={route.MEMOS}>
+        Memo
+      </NavLink>
+      {/* <NavLink exact activeClassName="activeNav" to={route.MEMOHOOK}>Memo Hook</NavLink> */}
+      {/* <NavLink exact activeClassName="activeNav" to={route.CALLBACKHOOK}>Callback</NavLink> */}
+      <NavLink exact activeClassName="activeNav" to={route.PADRE}>
+        Challenge
+      </NavLink>
+      <NavLink exact activeClassName="activeNav" to={route.USEREDUCE}>
+        UseReducer
+      </NavLink>
+    </nav>
+  );
+};
