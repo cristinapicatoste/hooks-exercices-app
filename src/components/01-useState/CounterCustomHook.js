@@ -6,7 +6,8 @@ export const CounterCustomHook = () => {
 
   return (
     <>
-      <h1>Counter Hook: {counter}</h1>
+      <h1>Counter Hook:</h1>
+      <h2>{counter}</h2>
       <button className="add" onClick={inc}>
         +1
       </button>

@@ -21,6 +21,7 @@ import { Context } from "./components/09-useContext/Context";
 // import { Logout } from "./components/09-useContext/Logout";
 // import { Login } from "./components/09-useContext/Login";
 import { UserContext } from "./components/09-useContext/UserDataContext";
+import { CustomHooks } from "./components/03-examples/CustomHooks";
 
 export const App = () => {
   // const user = {
@@ -42,6 +43,7 @@ export const App = () => {
         <NavBar />
         <Switch>
           <Route exact path={route.HOME} component={Home} />
+          <Route exact path={route.CUSTOMHOOKS} component={CustomHooks} />
           <Route exact path={route.BREAKING} component={MultipleCustomHooks} />
           <Route exact path={route.FORMHOOK} component={FormCustomHook} />
           <Route exact path={route.FORM} component={SimpleForm} />

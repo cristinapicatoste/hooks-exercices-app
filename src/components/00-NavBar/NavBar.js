@@ -9,6 +9,9 @@ export const NavBar = () => {
       <NavLink exact activeClassName="activeNav" to={route.HOME}>
         Home
       </NavLink>
+      {/* <NavLink exact activeClassName="activeNav" to={route.CUSTOMHOOKS}>
+        CustomHooks
+      </NavLink> */}
       {/* <NavLink exact activeClassName="activeNav" to={route.COUNTER}>Counter</NavLink> */}
       <NavLink exact activeClassName="activeNav" to={route.COUNTERHOOK}>
         Counter
@@ -27,7 +30,7 @@ export const NavBar = () => {
         UseLayout
       </NavLink>
       <NavLink exact activeClassName="activeNav" to={route.MEMOS}>
-        Memo
+        UseMemo
       </NavLink>
       {/* <NavLink exact activeClassName="activeNav" to={route.MEMOHOOK}>Memo Hook</NavLink> */}
       {/* <NavLink exact activeClassName="activeNav" to={route.CALLBACKHOOK}>Callback</NavLink> */}
