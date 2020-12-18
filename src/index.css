@@ -86,9 +86,9 @@ button.blue {
   background: var(--gradientBlue);
 }
 button.blue:hover {
-  border: 2px solid var(--darkBlue);
+  border: 2px solid white;
   border-radius: 40px;
-  color: var(--darkBlue);
+  color: white;
   background: transparent;
 }
 

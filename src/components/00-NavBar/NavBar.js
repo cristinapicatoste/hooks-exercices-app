@@ -37,6 +37,9 @@ export const NavBar = () => {
       <NavLink exact activeClassName="activeNav" to={route.USEREDUCE}>
         UseReducer
       </NavLink>
+      <NavLink exact activeClassName="activeNav" to={route.USECONTEXT}>
+        UseContext
+      </NavLink>
     </nav>
   );
 };
