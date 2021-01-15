@@ -29,20 +29,15 @@ export const TodoApp = () => {
     if (description.trim().length <= 1) {
       return;
     }
-    const newTodo = {
-      id: new Date().getTime(),
-      desc: description,
-      done: false,
-    };
 
-    // create action
-    const addTodoAction = {
+    dispatch({
       type: "add",
-      payload: newTodo,
-    };
-
-    // dispatch to add
-    dispatch(addTodoAction);
+      payload: {
+        id: new Date().getTime(),
+        desc: description,
+        done: false,
+      }
+    });
 
     reset();
 
@@ -58,22 +53,17 @@ export const TodoApp = () => {
   };
 
   const handleDelete = (todoId) => {
-    // create action
-    const deleteToDo = {
+    dispatch({
       type: "delete",
       payload: todoId,
-    };
-    // dispatch to delete
-    dispatch(deleteToDo);
+    });
   };
 
   const handleToggle = (todoId) => {
-    const toggle = {
+    dispatch({
       type: "toggle",
       payload: todoId,
-    };
-
-    dispatch(toggle);
+    });
   };
 
   // console.log(todo.done);

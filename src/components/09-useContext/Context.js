@@ -9,6 +9,7 @@ import { UserContext } from "./UserDataContext";
 // import { NavBarUseContext } from "./NavBarUseContext";
 
 export const Context = () => {
+
   let { user } = useContext(UserContext);
 
   return (
