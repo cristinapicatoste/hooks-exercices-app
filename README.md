@@ -19,7 +19,7 @@ Put hook applications into practice.
 
 ## Demo
 
-[Hooks App Demo]()
+[Hooks App Demo](https://cristinapicatoste.github.io/hooks-exercices-app/)
 
 ## Try it yourself
 
