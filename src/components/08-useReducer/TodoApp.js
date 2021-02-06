@@ -60,6 +60,7 @@ export const TodoApp = () => {
   };
 
   const handleToggle = (todoId) => {
+
     dispatch({
       type: "toggle",
       payload: todoId,
